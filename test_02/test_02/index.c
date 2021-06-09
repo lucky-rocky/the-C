@@ -151,3 +151,40 @@
 // int* p = &a; 有一种专门用来存放地址的变量,叫做指针变量 类型为 int*
 // *p // *--解引用操作符  *p = 20;  此时,p存放的地址对应的变量a被通过修改地址内的内容,被重新赋值为20
 // 指针大小, 在32位 是 32bit = 4byte  在64位 是 64bit = 8byte
+//int main()
+//{
+//	int a = 10;
+//	int* p = &a; // int* ---*表示是指针变量,int 表示p指向的对象a是int类型
+//	printf("%d\n", *p);  // 打印函数记得用双引号
+//	return 0;
+//}
+
+// 结构体 -- 自己创造出来的一种类型,用来描述复杂对象
+// 创建一个结构体类型
+struct Book
+{
+	char name[20];
+	short price;
+		 
+};// 有分号
+int main()
+{
+	struct Book b1 = {
+		"CCCCCCCCCC",
+		555
+	};
+	struct Book* p = &b1;
+	printf("%s\n", b1.name);
+
+	b1.price = 19;
+	printf("%d\n", b1.price);
+	printf("%d\n", (*p).price); // 括起来  结构体变量.成员
+
+	printf("%s\n", p->name); // 结构体指针->成员
+	printf("% s\n", p->name);
+	
+	return 0;
+}
+
+
+
